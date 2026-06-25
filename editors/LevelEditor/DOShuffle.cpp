@@ -317,6 +317,45 @@ void __fastcall TfrmDOShuffle::ebAppendIndexClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TfrmDOShuffle::increase_height() {
+	m_OneColorHeight++;
+    if(m_OneColorHeight > 250)
+    	m_OneColorHeight = 250;
+
+	xr_vector<TfrmOneColor*>::iterator it, end;
+	for(it = color_indices.begin(), end = color_indices.end(); it != end; it++)
+    {
+    	(*it)->Height = m_OneColorHeight;
+    }
+}
+
+void __fastcall TfrmDOShuffle::decrease_height() {
+	m_OneColorHeight--;
+    if(m_OneColorHeight < 35)
+    	m_OneColorHeight = 35;
+
+	xr_vector<TfrmOneColor*>::iterator it, end;
+	for(it = color_indices.begin(), end = color_indices.end(); it != end; it++)
+    {
+    	(*it)->Height = m_OneColorHeight;
+    }
+}
+
+void __fastcall TfrmDOShuffle::btnIncreaseHeightClick(TObject *Sender)
+{
+    increase_height();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmDOShuffle::btnDecreaseHeightClick(TObject *Sender)
+{
+    decrease_height();
+}
+//---------------------------------------------------------------------------
+
+
+
 void __fastcall TfrmDOShuffle::RemoveColorIndex(TfrmOneColor* p)
 {
 	form->bColorIndModif = true;
@@ -413,30 +452,14 @@ void __fastcall TfrmDOShuffle::fsStorageSavePlacement(TObject *Sender)
 void __fastcall TfrmDOShuffle::sbDOMouseWheelUp(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
-	m_OneColorHeight++;
-    if(m_OneColorHeight > 250)
-    	m_OneColorHeight = 250;
-
-	xr_vector<TfrmOneColor*>::iterator it, end;
-	for(it = color_indices.begin(), end = color_indices.end(); it != end; it++)
-    {
-    	(*it)->Height = m_OneColorHeight;
-    }
+    increase_height();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TfrmDOShuffle::sbDOMouseWheelDown(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
-	m_OneColorHeight--;
-    if(m_OneColorHeight < 35)
-    	m_OneColorHeight = 35;
-
-	xr_vector<TfrmOneColor*>::iterator it, end;
-	for(it = color_indices.begin(), end = color_indices.end(); it != end; it++)
-    {
-    	(*it)->Height = m_OneColorHeight;
-    }
+    decrease_height();
 }
 //---------------------------------------------------------------------------
 

@@ -65,6 +65,40 @@ object frmDOShuffle: TfrmDOShuffle
         FlatAlwaysEdge = True
         OnClick = ebAppendIndexClick
       end
+      object btnIncreaseHeight: TExtBtn
+        Left = 184
+        Top = 0
+        Width = 26
+        Height = 18
+        Align = alNone
+        BevelShow = False
+        Caption = '+H'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        FlatAlwaysEdge = True
+        OnClick = btnIncreaseHeightClick
+      end
+      object btnDecreaseHeight: TExtBtn
+        Left = 158
+        Top = 0
+        Width = 26
+        Height = 18
+        Align = alNone
+        BevelShow = False
+        Caption = '-H'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        FlatAlwaysEdge = True
+        OnClick = btnDecreaseHeightClick
+      end
       object ebMultiClear: TExtBtn
         Left = 1
         Top = 0
