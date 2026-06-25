@@ -116,6 +116,23 @@ object frmDOShuffle: TfrmDOShuffle
         FlatAlwaysEdge = True
         OnClick = btnResetHeightClick
       end
+      object btnAutoHeight: TExtBtn
+        Left = 224
+        Top = 0
+        Width = 30
+        Height = 18
+        Align = alNone
+        BevelShow = False
+        Caption = 'Auto'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        FlatAlwaysEdge = True
+        OnClick = btnAutoHeightClick
+      end
       object ebMultiClear: TExtBtn
         Left = 1
         Top = 0

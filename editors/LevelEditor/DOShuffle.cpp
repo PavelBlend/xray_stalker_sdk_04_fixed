@@ -361,6 +361,27 @@ void __fastcall TfrmDOShuffle::btnResetHeightClick(TObject *Sender)
     {
         (*it)->Height = 50;
     }
+    m_OneColorHeight = 50;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmDOShuffle::btnAutoHeightClick(TObject *Sender)
+{
+    xr_vector<TfrmOneColor*>::iterator it, end;
+    for(it = color_indices.begin(), end = color_indices.end(); it != end; it++)
+    {
+        int new_height = (*it)->tvDOList->Items->Count * (*it)->tvDOList->LineHeight + 8;
+        if (new_height < 35) {
+            new_height = 35;
+        }
+        if (new_height > 250) {
+            new_height = 250;
+        }
+        (*it)->Height = new_height;
+    }
+
+    m_OneColorHeight = 50;
+    sbDO->Invalidate();
 }
 //---------------------------------------------------------------------------
 

@@ -69,6 +69,7 @@ __published:	// IDE-managed Components
     void __fastcall btnIncreaseHeightClick(TObject *Sender);
     void __fastcall btnDecreaseHeightClick(TObject *Sender);
     void __fastcall btnResetHeightClick(TObject *Sender);
+    void __fastcall btnAutoHeightClick(TObject *Sender);
 
 	void __fastcall ebMultiClearClick(TObject *Sender);
 	void __fastcall tvItemsDragDrop(TObject *Sender, TObject *Source, int X,
