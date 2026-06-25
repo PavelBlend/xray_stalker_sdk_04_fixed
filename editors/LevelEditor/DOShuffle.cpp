@@ -354,7 +354,15 @@ void __fastcall TfrmDOShuffle::btnDecreaseHeightClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
+void __fastcall TfrmDOShuffle::btnResetHeightClick(TObject *Sender)
+{
+    xr_vector<TfrmOneColor*>::iterator it, end;
+    for(it = color_indices.begin(), end = color_indices.end(); it != end; it++)
+    {
+        (*it)->Height = 50;
+    }
+}
+//---------------------------------------------------------------------------
 
 void __fastcall TfrmDOShuffle::RemoveColorIndex(TfrmOneColor* p)
 {
