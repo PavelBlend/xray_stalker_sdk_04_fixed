@@ -66,7 +66,10 @@ enum{
 
 	COMMAND_TOGGLE_FULLSCREEN,
 
+    COMMAND_TOGGLE_RENDER_EDGED_FACES,
+
     COMMAND_MAIN_LAST
+
 };
 //------------------------------------------------------------------------------
 

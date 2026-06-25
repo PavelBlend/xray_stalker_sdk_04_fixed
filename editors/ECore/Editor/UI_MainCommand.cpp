@@ -421,6 +421,15 @@ CCommandVar 	CommandToggleRenderWire(CCommandVar p1, CCommandVar p2)
     UI->RedrawScene		();
     return				TRUE;
 }
+
+CCommandVar 	CommandToggleRenderEdgedFaces(CCommandVar p1, CCommandVar p2)
+{
+    psDeviceFlags.set(rsEdgedFaces, !psDeviceFlags.is(rsEdgedFaces));
+
+    UI->RedrawScene		();
+    return				TRUE;
+}
+
 CCommandVar 	CommandToggleSafeRect(CCommandVar p1, CCommandVar p2)
 {
     psDeviceFlags.set	(rsDrawSafeRect,!psDeviceFlags.is(rsDrawSafeRect));
@@ -683,6 +692,7 @@ void TUI::RegisterCommands()
     REGISTER_SUB_CMD_END;
 	REGISTER_CMD_SE	    (COMMAND_MOVE_CAMERA_TO,        "Scene\\Move Camera To",CommandMoveCameraTo,false);
     REGISTER_CMD_SE	    (COMMAND_TOGGLE_RENDER_WIRE,	"Toggle Wireframe",		CommandToggleRenderWire,			false);
+    REGISTER_CMD_SE	    (COMMAND_TOGGLE_RENDER_EDGED_FACES,   "Toggle Edged Faces",    CommandToggleRenderEdgedFaces,			false);
     REGISTER_CMD_C	    (COMMAND_RENDER_FOCUS,       	this,TUI::CommandRenderFocus);
 	REGISTER_CMD_CE	    (COMMAND_BREAK_LAST_OPERATION,	"Break Last Operation",	this,TUI::CommandBreakLastOperation,false);
     REGISTER_CMD_SE	    (COMMAND_TOGGLE_SAFE_RECT,   	"Toggle Safe Rect",		CommandToggleSafeRect,false);
